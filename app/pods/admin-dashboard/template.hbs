@@ -1,0 +1,12 @@
+{{nav-bar}}
+<div class="container">
+	<h3 class="page-headings">Welcome to Admin Dashboard</h3>
+	<ul class="nav nav-tabs" style="margin-top:25px">
+		{{#link-to "admin-dashboard.user-mgt" tagName="li"}}<a href="">User Managment</a>{{/link-to}}
+		{{#link-to "admin-dashboard.admin-msg" tagName="li"}}<a href="">Admin Messages</a>{{/link-to}}
+	</ul>
+	<div class="jumbotron" id="admin-outlet" >
+		{{notification-container notifications=notifications position="top"}}
+		{{liquid-outlet }}
+	</div>
+</div>

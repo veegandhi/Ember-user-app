@@ -1,0 +1,42 @@
+<form role="form">
+	{{form-input labelName = "Name on Card" tabindex="1" input-value= details.CCname has-error=errorWarnings.CCname label-for="card-holder-name"}}
+	{{form-input labelName = "Card Number" tabindex="2" input-value= details.CCnum has-error=errorWarnings.CCnum label-for="Credit Card Number"}}
+	<div class="form-group">
+		<div class="row">
+			<div class="col-md-4">
+				<label for="ccexp">Expiry Month</label>
+				<select class="form-control" name="expiry-month" id="expiry-month" value={{details.CCexpiryMM}} >
+					<option>Month</option>
+					<option value="01">Jan (01)</option>
+					<option value="02">Feb (02)</option>
+					<option value="03">Mar (03)</option>
+					<option value="04">Apr (04)</option>
+					<option value="05">May (05)</option>
+					<option value="06">June (06)</option>
+					<option value="07">July (07)</option>
+					<option value="08">Aug (08)</option>
+					<option value="09">Sep (09)</option>
+					<option value="10">Oct (10)</option>
+					<option value="11">Nov (11)</option>
+					<option value="12">Dec (12)</option>
+				</select>
+			</div>
+			<div class="col-md-4">
+				<label for="ccexp">Expiry Year</label>
+				<select class="form-control" name="expiry-year" value={{details.CCexpiryYY}} >
+					<option value="16">2016</option>
+					<option value="17">2017</option>
+					<option value="18">2018</option>
+					<option value="19">2019</option>
+					<option value="20">2020</option>
+					<option value="21">2021</option>
+					<option value="22">2022</option>
+					<option value="23">2023</option>
+				</select>
+			</div>
+			<div class="col-md-4">
+				{{form-input labelName = "CVV" tabindex="2" input-value= details.CCcvv has-error=errorWarnings.CCcvv label-for="cvv"}}
+			</div>
+		</div>
+	</div>
+</form>

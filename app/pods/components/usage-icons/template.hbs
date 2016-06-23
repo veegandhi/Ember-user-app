@@ -1,0 +1,38 @@
+{{#if isShowingReportModal}}
+	{{report-modal toggleModal=(action "toggleReportModal") reports=reports}}
+{{/if}}
+{{#if isShowingUserStatsModal}}
+	{{user-stats-modal toggleModal=(action "toggleUserStatsModal") usage=userStats}}
+{{/if}}
+<div class="panel-heading">
+	<div class="row">
+		<div class="col-xs-3">
+			{{fa-icon icon size="5"}}
+		</div>
+		<div class="col-xs-9 text-right">
+			<div class="huge">{{titleOne}}</div>
+			<div>{{titleTwo}}</div>
+		</div>
+	</div>
+</div>
+<div class="panel-footer">
+	<span class="pull-right">
+		{{#if footerText}}
+			{{footerText}}
+		{{/if}}
+		{{#if linkInfo}}
+			{{#link-to linkAddress tagName="span" class="link-pointer"}}{{linkInfo}} Accounts&nbsp;&nbsp;{{fa-icon "fa fa-arrow-circle-right"}}{{/link-to}}
+		{{/if}}
+		{{#if reportModal}}
+			<span  class="link-pointer" {{action "toggleReportModal"}}>
+				View  {{fa-icon "fa fa-arrow-circle-right"}}
+			</span>
+		{{/if}}
+		{{#if userStatsModal}}
+			<span  class="link-pointer" {{action "toggleUserStatsModal"}}>
+				Last 30 Days  {{fa-icon "fa fa-arrow-circle-right"}}
+			</span>
+		{{/if}}
+	</span>
+	<div class="clearfix"></div>
+</div>

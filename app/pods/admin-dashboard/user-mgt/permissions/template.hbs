@@ -1,0 +1,30 @@
+
+<div class="row" style="margin-top:25px">
+  <div class="col-md-offset-3 col-md-5">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search Account Tree">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">{{fa-icon "fa-arrow-circle-right"}}</button>
+      </span>
+    </div>
+  </div>
+</div>
+<div class="col-md-offset-3 col-md-5 account-permission" style="padding : 10px ">  
+  <div class="sample-tree" style="padding : 10px ;border : 1px solid black ">
+    <p style="margin-bottom:10px;">Customer Accounts</p>
+    {{ember-jstree
+      actionReceiver=jstreeActionReceiver
+      selectedNodes=jstreeSelectedNodes
+      data=data
+      plugins=plugins 
+      checkboxOptions=checkboxOptions
+      typesOptions=typesOptions       
+      eventDidSelectNode="selectAccount"
+      eventDidDeselectNode="deselectAccount"            
+      contextMenuReportClicked="contextMenuReportClicked"
+      eventDidBecomeReady="handleTreeDidBecomeReady"
+    }}
+  </div>
+</div>  
+
+

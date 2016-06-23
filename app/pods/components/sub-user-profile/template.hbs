@@ -1,0 +1,42 @@
+<div class="row" style="padding-bottom: 15px;">
+	<h3 style="display:inline;padding-left: 20px;">{{title}}</h3>
+	{{#if user class="profile-animation"}}
+		{{#unless isEdit}}
+			<div class="pull-right record-control" >
+				<button class="btn-warning" {{action 'editRecord'}}>{{fa-icon "pencil"}} Edit User</button>
+			</div>
+		{{/unless}}
+	{{/if}}
+</div>
+<div class="panel panel-warning" id="profile-panel">
+	<div class="panel-heading">
+		{{#liquid-if isEdit class="profile-animation"}}
+			{{input value=user.name placeholder="New username" type="text"}}
+			<div class="pull-right">
+				<button class="btn-success" {{action "saveEdit"}}>{{fa-icon "fa-check"}} Save</button>
+			</div>
+		{{else liquid-if user }}
+			{{user.name}}
+		{{else}}
+			{{input value=newRecord.name placeholder="New username" type="text" }}
+			<div class="pull-right">
+				<button class="btn-success" {{action "saveRecord"}}>{{fa-icon "fa-check"}} Save</button>
+			</div>
+		{{/liquid-if}}
+	</div>
+	<div class="panel-body">
+		<h4>Access</h4>
+		{{#liquid-if user class="profile-animation"}}
+			<div>
+				{{input type="checkbox" class="toggle" checked=user.read disabled=(unless isEdit true false)}} Read
+				{{input type="checkbox" class="toggle" checked=user.write disabled=(unless isEdit true false)}} Write
+			</div>
+			<h4>Login Info</h4>
+			<p>Last Logged in : {{#if user.lastLogin}} {{user.lastLogin}} {{else}} Not available.. {{/if}}</p>
+			<p>Total Logins in Last Month : {{#if user.lastLogin}} {{user.lastLogin}} {{else}} Not available.. {{/if}}</p>
+		{{else}}
+			{{input type="checkbox" class="toggle" checked=newRecord.read}} Read
+			{{input type="checkbox" class="toggle" checked=newRecord.write}} Write
+		{{/liquid-if}}
+	</div>
+</div>

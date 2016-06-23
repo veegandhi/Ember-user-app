@@ -1,0 +1,28 @@
+<div style="margin-top:25px">
+	<div class="row" style="margin-bottom:25px">
+		<div class="col-md-offset-1 col-md-9">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Search Feature Here">
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button">{{fa-icon "fa-arrow-circle-right"}}</button>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-4">
+			{{feature-pills heading="Reports" modeName="reports" modeState=model.reports changeMode=(action "changeMode")}}
+		</div>
+		<div class="col-md-offset-1 col-md-4">
+			{{feature-pills heading="STEP" modeName="step" modeState=model.step changeMode=(action "changeMode")}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-offset-1 col-md-4">
+			{{feature-pills heading="Billing" modeName="billing" modeState=model.billing changeMode=(action "changeMode")}}
+		</div>
+		<div class="col-md-offset-1 col-md-4">
+			{{feature-pills heading="Forecasting" modeName="enableDisable" modeState=model.enableDisable changeMode=(action "changeMode")}}
+		</div>
+	</div>
+</div>

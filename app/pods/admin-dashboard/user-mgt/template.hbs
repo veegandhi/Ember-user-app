@@ -1,0 +1,17 @@
+<h5>
+	<ol class="breadcrumb">
+		<li><a href="">Users</a></li>
+		<li class="active">{{model.fname}} {{model.lname}}</li>
+	</ol>
+</h5>
+<div class="row">
+	{{profile-panel user=model}}
+</div>
+<ul class="nav nav-tabs" style="margin-top:25px">
+	{{#link-to "admin-dashboard.user-mgt.features" tagName="li"}}<a href="">Features</a>{{/link-to}}
+	{{#link-to "admin-dashboard.user-mgt.permissions" tagName="li"}}<a href="">Account Permissions</a>{{/link-to}}
+	{{#link-to "admin-dashboard.user-mgt.usage" tagName="li"}}<a href="">Usage</a>{{/link-to}}
+</ul>
+<div>
+	{{liquid-outlet}}
+</div>

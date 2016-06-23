@@ -1,0 +1,44 @@
+{{#modal-dialog  close="toggleModal"
+container-class='report-container'
+targetAttachment='center center'
+translucentOverlay=true}}
+<div class="col-md-12 report-modal">
+	<div class="row" style="margin-bottom: 25px;margin-left: 0px;margin-top: 25px;">
+		<h4 style="display:inline">Report Statistics</h4>
+	</div>
+	<div class="row">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Created</th>
+					<th>Released</th>
+					<th>Pages</th>
+					<th>Downloads</th>
+					<th>Location</th>
+					<th>View</th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#each reports as |report|}}
+				<tr>
+					<td>{{report.name}}</td>
+					<td>{{report.created}}</td>
+					<td>{{report.released}}</td>
+					<td>{{report.pages}}</td>
+					<td>{{report.dw}}</td>
+					<td>{{report.location}}</td>
+					<td><span style="cursor:pointer">{{fa-icon "fa-file-pdf-o"}}</span></td>
+				</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+	<div class="row">
+		<span class="pull-right report-modal-buttons">
+			<button class="btn btn-info">{{fa-icon "fa-print"}} Print</button>
+			<button class="btn btn-primary" {{action "toggleModal"}}>{{fa-icon "fa-close"}} Close</button>
+		</span>
+	</div>
+</div>
+{{/modal-dialog}}

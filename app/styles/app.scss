@@ -1,0 +1,221 @@
+@import 'bootstrap';
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
+/*Viewport Navbar Adjustments*/
+@media (min-width: 1200px) {
+  #exCollapsingNavbar.collapse,#dashboard-nav.collapse  {
+    display: block !important;
+  }
+  .navbar-toggler{
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  #exCollapsingNavbar.collapse,#dashboard-nav.collapse {       
+    float:none
+  }
+  .navbar-toggler{
+    display: inline !important;
+  }   
+}
+@media (min-width: 0px) and (max-width: 992px) {
+  .col-xs-10{
+    float:none;
+  }
+}
+@media (min-width: 992px)  and (max-width: 1200px){
+  #exCollapsingNavbar.collapse,#dashboard-nav.collapse {
+    display: block !important;
+  }
+  .navbar-toggler{
+    display: none !important;
+  }
+}
+/*HTML Styling*/
+html { 
+  background: url(../bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body {
+  font-family: 'Oswald', sans-serif;
+  background-color: rgba(255, 255, 255, 0);
+}
+.list-group-item{ 
+  cursor: pointer; 
+  text-align : center;
+}
+.list-group-item:hover{
+  color: #060000;
+  background-color: rgba(203, 209, 214, 0.96);
+}
+.panel-warning > .panel-heading {
+  color: #000000;
+  background-color: #E2AF20;
+  border-color: rgb(255, 255, 255);
+}
+.vcenter {
+  vertical-align : center;    
+  align-items: center;
+}
+#user-list{
+  margin-top:43px;
+}
+.panel-body{  
+  margin-left: 0px;
+  margin-right: 0px;
+}
+#payment-panel{
+  padding : 10px 10px 10px 10px
+}
+#profile-panel,#payment-panel{
+  border: 2px solid;
+  border-color: rgb(9, 9, 9);
+}
+#profile-panel>.panel-heading{  
+  border-color: rgb(9, 9, 9);
+}
+.record-control{
+  padding-right:20px;
+}
+.navbar-toggler{
+  margin-right: 35px;
+}
+.payment-buttons{ 
+  margin-bottom: 25px;
+}
+.btn{
+  outline: none;
+}
+input[type="checkbox"][disabled]{
+  background: white;
+}
+.navbar-default .navbar-brand,.navbar-default .navbar-nav > li > a {
+  color: #f5f5f5;
+}
+.navbar-default {
+  background-color: #337ab7;
+  border-color: #e7e7e7;    
+}
+.page-headings{
+  color : white;
+  display:inline;
+  margin-left: 25px;
+  margin-bottom: 50px;
+}
+.c-notification__icon {
+  background-color: #ffa200;
+  visibility: hidden;
+}
+.c-notification--info {
+  background-color: #ffa200;
+}
+#admin-outlet{  
+  border-radius: 0;
+}
+.fa-toggle-on{
+  color:green
+}
+.fa-toggle-off{
+  color:red
+}
+.table td ,.table th{
+ text-align: center;   
+}
+.account-panel{
+  overflow:visble
+}
+.account-panel  a{
+  text-decoration: none
+}
+.quick-action{
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857;
+  color: #333333;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.quick-action:hover{
+  text-decoration: none;
+  color: #262626;
+  background-color: #f5f5f5;
+}
+.jstree-default .jstree-clicked {
+  background: rgba(190, 235, 255, 0);    
+  box-shadow: none; 
+}
+.account-permission{
+  font-size: 16px;
+}
+.usage-panels,.usage-panels .panel-footer{
+  border-color: black;
+}
+.ember-modal-overlay.translucent {
+  background-color:  rgba(166, 166, 166, 0.96);
+}
+.report-container{
+  width: 1120px;
+}
+.admin-message-container{
+ width: 800px; 
+}
+.report-modal-buttons{
+ margin-right:30px;
+ margin-left:10px;
+}
+.link-pointer{
+  cursor:pointer;
+  color:#337abf;
+}
+.panel-user-created > .panel-heading {
+  color: #000000;
+  background-color: #337ab7;
+}
+.panel-last-login > .panel-heading {
+  color: #000000;
+  background-color:#337ab7;
+}
+.panel-assigned-group > .panel-heading {
+  color: #000000;
+  background-color:#337ab7;
+}
+.panel-accounts > .panel-heading {
+  color: #000000;
+  background-color:#337ab7;
+}
+.panel-report-stats > .panel-heading {
+  color: #000000;
+  background-color:#337ab7;
+}
+.panel-user-stats > .panel-heading {
+  color: #000000;
+  background-color:#337ab7;
+}
+textarea {
+  width: inherit;
+  height: 150px;
+}
+.message-table > tbody > tr.danger > td{
+  background-color: rgba(252, 75, 62, 0.86);
+  color: white
+}
+.message-table > tbody > tr.info > td{
+  background-color: (51, 122, 183, 0.56);
+  color : black;
+}
+.message-table > tbody > tr.success > td{
+  background-color: rgba(66, 198, 10, 0.46);
+  color : black;
+}
+.action-icon {
+  cursor: pointer;
+}
+.message-table > thead{
+  background-color: #ffc67b;
+}

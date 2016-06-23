@@ -3,7 +3,8 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'user-app',
-    environment: environment,
+    podModulePrefix : 'user-app/pods',
+    environment: environment,       
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -16,7 +17,22 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+    emberCliFontAwesome: {
+      useScss: true, // for ember-cli-sass 
+     
+    },
+     firebase: {
+      apiKey: 'xyz',
+      authDomain: 'vdtest.firebaseapp.com',
+      databaseURL: 'https://vdtest.firebaseio.com'
+      
+    },
+    // if using ember-cli-content-security-policy
+    contentSecurityPolicy: {
+      'script-src': '\'self\' \'unsafe-eval\' apis.google.com',      
+      'connect-src': '\'self\' wss://*.firebaseio.com https://*.googleapis.com'
+    },
   };
 
   if (environment === 'development') {

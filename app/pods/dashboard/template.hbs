@@ -1,0 +1,31 @@
+{{nav-bar}}	
+{{notification-container notifications=notifications position="top"}}
+<div class="container jumbotoron">
+	<div class="row" style="margin-bottom: 50px;">
+		<h3 class="page-headings">
+			Welcome User!
+		</h3>
+		<div class="pull-right">
+			<button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" >
+		    &#9776;
+		  	</button>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-offset-1 col-xs-10 col-sm-10 col-md-offset-0 col-md-3">
+			<div class="collapse" id="exCollapsingNavbar">
+				<ul class="list-group">
+			  		{{#link-to 'dashboard.personal'  tagName="li" class="list-group-item"}}Personal{{/link-to}}
+			  		{{#link-to 'dashboard.payment' tagName="li" class="list-group-item"}}Payment{{/link-to}}
+		  			{{#link-to 'dashboard.manage-users' tagName="li" class="list-group-item"}}Manage Users{{/link-to}}
+				</ul>	
+			</div>  
+		</div>
+		<div class="col-sm-12 col-md-9">
+			<div class="col-md-12">
+				 {{liquid-outlet}}
+			</div>				
+		</div>	
+	</div>
+</div>
+

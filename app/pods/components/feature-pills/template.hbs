@@ -1,0 +1,15 @@
+<div class="panel-heading">
+	<label for={{heading}}>
+		<h4 style="display:inline">{{heading}}</h4>
+	</label>
+	<span style="margin-left: 5px;">
+		{{#if modeState}}
+			(Enabled)
+		{{else}}
+			(Disabled)
+		{{/if}}
+	</span>
+	<div class="pull-right">
+		<span style="cursor:pointer" {{action "changeMode" modeName }}>{{toggle-button buttonState=modeState}}</span>
+	</div>
+</div>

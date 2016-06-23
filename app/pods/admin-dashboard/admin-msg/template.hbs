@@ -1,0 +1,36 @@
+{{#if isShowingMessageModal}}
+	{{admin-message toggleModal=(action "toggleModal") add=(action "add") title="Create New Message"}}
+{{/if}}
+{{#if isShowingEditModal}}
+	{{admin-message toggleModal=(action "toggleEditModal") add=(action "edit") title="Edit Message" editMessage=editMessage}}
+{{/if}}
+<div class="row">
+	<h4 style="display:inline;margin-left: 15px;">Create Admin Message for John Smith</h4>
+	<span class="pull-right clearfix" style="margin-right: 25px;margin-bottom: 25px;">
+		<button class="btn btn-primary" {{action "toggleModal"}}>
+		{{fa-icon "fa-plus"}}  Create Message
+		</button>
+	</span>
+</div>
+<table class="table table-responsive well message-table">
+	<thead>
+		<tr>
+			<th>Publish Date</th>
+			<th>Expriy Date</th>
+			<th style="text-align:left">Message</th>
+			<th >Edit</th>
+			<th >Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each content.adminMessages as |message|}}
+			<tr class="{{message.type}}">
+				<td>{{message.publishDate}}</td>
+				<td>{{message.expiryDate}}</td>
+				<td style="text-align:left">{{message.message}}</td>
+				<td {{action "toggleEditModal" message}} >{{fa-icon "fa-pencil" class="action-icon"}}</td>
+				<td {{action "delete" message}} >{{fa-icon "fa-close" class="action-icon"}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>

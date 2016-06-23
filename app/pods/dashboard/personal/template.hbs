@@ -1,0 +1,40 @@
+{{#liquid-if errorMessageContainer class="error-animation"}}
+	{{error-container errorMessages=errorMessageContainer alert-danger=true}}
+{{/liquid-if}}
+{{#liquid-if successMessageContainer class="success-animation"}}
+	{{error-container successMessages=successMessageContainer alert-success=true}}
+{{/liquid-if}}
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		Personal Information		
+	</div>	
+	<div class="panel-body">			
+		<form role="form">
+			<div class="row">
+				<div class="col-md-4">
+					{{form-input labelName = "First Name*" tabindex="1" input-value= model.firstName has-error=errorWarnings.firstName label-for="fname"}}
+				</div>
+				<div class="col-md-4">
+					{{form-input labelName = "Last Name*" tabindex="2" input-value= model.lastName has-error=errorWarnings.lastName label-for="lname"}}					
+				</div>
+				<div class="col-md-4">
+					{{form-input labelName = "Email*" tabindex="3" input-value= model.email has-error=errorWarnings.email label-for="email" }}					
+				</div>
+			</div>		
+			{{form-input labelName = "Address" tabindex="4" input-value= model.address has-error=errorWarnings.address label-for="address"}}		   
+		  	{{form-input labelName = "Billing Address" tabindex="5" input-value= model.baddress has-error=errorWarnings.baddress label-for="baddress"}}
+		  
+		   <div class="checkbox">
+		      <label>{{input type="checkbox" class="toggle" checked=sameAddress }}Same as address</label>
+		   </div>  	  	
+		</form>	
+		<div class="row">
+			<div class="pull-right record-control" >
+				{{#unless viewMode}}					
+					<button class="btn-success" action="submit" {{action "saveRecord"}}>{{fa-icon "check"}} Save</button>
+		   		{{/unless}}		
+	   		</div>
+		</div>		
+	</div>
+</div>
+

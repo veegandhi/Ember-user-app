@@ -1,0 +1,51 @@
+{{#modal-dialog  close="toggleModal"
+container-class='admin-message-container'
+targetAttachment='center'
+close="clickOutside"
+translucentOverlay=true}}
+<div class="panel panel-{{newMessage.type}}">
+	<div class="panel-heading">
+		{{title}}
+	</div>
+	<div class="panel-body">
+		{{#if errorContainer class="success-animation"}}
+			{{error-container successMessages=errorContainer alert-danger=true}}
+		{{/if}}
+		<form role="form">
+			<div class="row">
+				<div class="col-md-4">
+					<label for="message">Message Type</label>
+					<select class="form-control" name="user-selection" id="user-selection" placeholder="Select User" value={{newMessage.type}} style="display:inline"  onchange={{action "setType" value="target.value" }}					>
+						<option value="success">Default</option>
+						<option value="info">Information</option>
+						<option value="danger">Warning</option>
+					</select> <br>iinfo
+				</div>
+				<div class="col-md-4 clearfix">
+					<div class="form-group">
+						<label for="message">Publish Date</label>
+						{{bs-datetimepicker date=newMessage.publishDate format='DD-MM-YYYY hh:mm A' minDate=startDate updateDate=(action (mut newMessage.publishDate))}}
+					</div>
+				</div>
+				<div class="col-md-4 clearfix">
+					<div class="form-group">
+						<label for="message">Expiry Date</label>
+						{{bs-datetimepicker date=newMessage.expiryDate format='DD-MM-YYYY hh:mm A' minDate=startDate updateDate=(action (mut newMessage.expiryDate))}}
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class={{errorClass}}>
+						<label for="message">Message*</label> <br>
+						{{textarea placeholder="Message you want to display to the user." value=newMessage.message class="form-control" }}
+					</div>
+				</div>
+			</div>
+		</form>
+		<div class="row">
+			<div class="pull-right record-control" >
+				<button class="btn btn-success" action="submit" {{action "save" newMessage}}>{{fa-icon "check"}} Save</button>
+			</div>
+		</div>
+	</div>
+</div>
+{{/modal-dialog}}

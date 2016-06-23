@@ -1,0 +1,10 @@
+{{#if errorMessages}}
+	{{#each errorMessages as |message|}}
+		<li>{{message}}</li>
+	{{/each}}
+{{/if}}
+{{#if successMessages}}
+	{{#each successMessages as |message|}}
+		<div style="text-align: center;">{{message}}</div>
+	{{/each}}
+{{/if}}

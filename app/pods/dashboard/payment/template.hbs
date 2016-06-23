@@ -1,0 +1,39 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		Payments Method	
+	</div>	
+	<div class="panel-body ">
+		<div class="row">						
+			<div class="payment-buttons col-xs-offset-3 col-xs-6 col-sm-offset-4 col-sm-8 col-md-offset-4 col-md-8  ">
+				{{payment-button 
+					display-text=" Credit Card" 
+					icon="fa-credit-card" 
+					btn-selected=model.isCreditCard 
+					click=(action "changeMethod" "cc")
+				}}
+				{{payment-button 
+					display-text="Direct Debit" 						
+					icon="fa-university" 
+					btn-selected=model.isDirectDebit 
+					click=(action "changeMethod" "dd")
+				}}				
+			</div>	
+		</div>
+		
+		<div class="col-md-10 col-md-offset-1" id="payment-panel">			
+			{{#unless viewMode}}
+				<div class="row">
+					<div class="pull-right" style="margin-right:25px">
+						<button class="btn-success" {{action "changeMode"}}>{{fa-icon "check"}} Save</button>			   		
+					</div>				
+		   		</div>
+	   		{{/unless}}
+			{{#liquid-if model.isCreditCard class="payment-mode-credit"}}
+				{{credit-card details=model }}
+			{{/liquid-if}}
+			{{#liquid-if model.isDirectDebit class="payment-mode-debit"}}					
+				{{direct-debit details=model }}
+			{{/liquid-if}}
+		</div>	
+	</div>	
+</div>

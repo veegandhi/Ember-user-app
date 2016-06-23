@@ -1,0 +1,44 @@
+ {{#modal-dialog  close="toggleModal"
+ container-class='report-container'
+ targetAttachment='center center'
+ translucentOverlay=true}}
+ <div class="col-md-12 report-modal">
+ 	<div class="row" style="margin-bottom: 25px;margin-left: 0px;margin-top: 25px;">
+ 		<h4 style="display:inline">Usage Statistics</h4>
+ 	</div>
+ 	<div class="row">
+ 		<table class="table table-striped">
+ 			<thead>
+ 				<tr>
+ 					<th>Activity Date</th>
+ 					<th>Login Time</th>
+ 					<th>Session Duration</th>
+ 					<th>Page Visits</th>
+ 					<th>Failed API Calls</th>
+ 					<th>Succeeded API Calls</th>
+ 					<th>Reports Created</th>
+ 				</tr>
+ 			</thead>
+ 			<tbody>
+ 				{{#each usage as |usageRow|}}
+ 				<tr>
+ 					<td>{{usageRow.dt}}</td>
+ 					<td>{{usageRow.time}}</td>
+ 					<td>{{usageRow.sessionTime}}</td>
+ 					<td>{{usageRow.pageVisits}}</td>
+ 					<td>{{usageRow.failedRequest}}</td>
+ 					<td>{{usageRow.successRequest}}</td>
+ 					<td>{{usageRow.reportCreated}}</td>
+ 				</tr>
+ 				{{/each}}
+ 			</tbody>
+ 		</table>
+ 	</div>
+ 	<div class="row">
+ 		<span class="pull-right report-modal-buttons">
+ 			<button class="btn btn-info">{{fa-icon "fa-print"}} Print</button>
+ 			<button class="btn btn-primary" {{action "toggleModal"}}>{{fa-icon "fa-close"}} Close</button>
+ 		</span>
+ 	</div>
+ </div>
+ {{/modal-dialog}}
