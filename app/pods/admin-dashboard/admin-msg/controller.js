@@ -4,11 +4,13 @@ export default Ember.Controller.extend({
 	isShowingMessageModal : false,
 	actions:{
 		delete(message){
-			this.get('content.adminMessages').removeObject(message);
-			this.notifications.success('Message Deleted', {
-				autoClear: true,
-				clearDuration: 1200
-			});
+			if(confirm('Permanently delete message ? ')){
+				this.get('content.adminMessages').removeObject(message);
+				this.notifications.success('Message Deleted', {
+					autoClear: true,
+					clearDuration: 1200
+				});
+			}
 		},
 		add(newMessage){
 			this.get('content.adminMessages').pushObject(newMessage);

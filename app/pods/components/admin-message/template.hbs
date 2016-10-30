@@ -19,8 +19,8 @@ translucentOverlay=true}}
 						<option value="success">Default</option>
 						<option value="info">Information</option>
 						<option value="danger">Warning</option>
-					</select> <br>iinfo
-				</div>
+					</select> <br>
+				</div> 
 				<div class="col-md-4 clearfix">
 					<div class="form-group">
 						<label for="message">Publish Date</label>
@@ -42,6 +42,9 @@ translucentOverlay=true}}
 			</div>
 		</form>
 		<div class="row">
+			<div class="pull-right record-control" >
+				<button class="btn btn-primary" {{action "toggleModal"}}>{{fa-icon "fa-close"}} Close</button>
+			</div>
 			<div class="pull-right record-control" >
 				<button class="btn btn-success" action="submit" {{action "save" newMessage}}>{{fa-icon "check"}} Save</button>
 			</div>

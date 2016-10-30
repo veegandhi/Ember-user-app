@@ -27,8 +27,12 @@ export default Ember.Component.extend({
 		toggleModal(){
 			this.sendAction('toggleModal');
 		},
-		clickOutside(){
-			return false;
+		clickOutside(){ 
+			if(confirm('Unsaved data might be lost. Exit? ')){
+				this.sendAction('toggleModal');
+			} else{
+				return false;
+			}
 		},
 		setType(type){
 			this.set('newMessage.type',type);
@@ -47,7 +51,6 @@ export default Ember.Component.extend({
 			}
 			else
 			{
-				console.log(newMessage);
 				this.set('newMessage.expiryDate',moment(newMessage.expiryDate).format('DD-MM-YYYY hh:mm A'));
 				this.set('newMessage.publishDate',moment(newMessage.publishDate).format('DD-MM-YYYY hh:mm A'));
 				this.get('add')(newMessage);

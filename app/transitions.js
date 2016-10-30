@@ -1,7 +1,8 @@
 export default function(){
 	this.transition(
 		this.toRoute(['dashboard','dashboard.payment','dashboard.personal','dashboard.manage-users','admin-dashboard.user-mgt','admin-dashboard.user-history','admin-dashboard.admin-msg','admin-dashboard.user-mgt.features']),
-		this.use('fade')
+		this.use('fade'),
+		this.debug()
 		);	
 	this.transition(
 		this.fromRoute('admin-dashboard.user-mgt.permissions'),

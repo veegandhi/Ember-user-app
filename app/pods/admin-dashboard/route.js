@@ -1,7 +1,7 @@
 import Ember from 'ember';
 export default Ember.Route.extend({
 	beforeModel(){
-		this.transitionTo('admin-dashboard.user-mgt');
+		this.transitionTo('admin-dashboard.admin-msg');
 	},
 	model(){
 		return Ember.Object.create({
